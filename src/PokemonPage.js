@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getPokemons } from './services/fetch-utils';
+import PokemonList from './PokemonList';
 
 
 function App() {
