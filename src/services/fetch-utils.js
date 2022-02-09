@@ -1,6 +1,6 @@
-import { client, checkError } from '../../client';
+import { client, checkError } from '../client';
 
-export async function getPokemon(from = 0, to = 20) {
+export async function getPokemons(from = 0, to = 20) {
   const response = await client
     .from('pokemon')
     .select()
@@ -14,7 +14,7 @@ export async function getSinglePokemon(id){
   const response = await client
     .from('pokemon')
     .select()
-    .match(id)
+    .match({ id })
     .single();
 
   return checkError(response);
