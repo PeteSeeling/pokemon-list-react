@@ -5,22 +5,22 @@ import { getSinglePokemon } from './services/fetch-utils';
 
 export default function PokemonDetail() {
   const [pokemon, setPokemon] = useState({});
-  const params = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     async function fetchAndPlacePokemon(){
-      const data = await getSinglePokemon(params.id);
+      const response = await getSinglePokemon(id);
           
-      setPokemon(data);
+      setPokemon(response);
     }
     fetchAndPlacePokemon();
-  }, [params.id]);
+  }, [id]);
 
   return (
     <><Link to='/'>Home Page</Link>
       <div className='pokemon-detail'>
         <div className='pokemon-data'>
-          <p>{pokemon.pokemon}</p>
+          <p>{pokemon.pokemonname}</p>
           <img className='pokemon-image' src={pokemon.url_image} />
           <p>{pokemon.height} Inches Tall</p>
           <p>Weighs {pokemon.weight} Pounds</p>
