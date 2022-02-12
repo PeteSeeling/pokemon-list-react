@@ -5,8 +5,8 @@ export default function Pokemon({ pokemon }){
     <div>
       <Link to={`PokemonDetail/${pokemon.id}`}>
         <div className='pokemon-detail-card'>
-          <p>{pokemon.pokemon}</p>
-          <img src={pokemon.url_image} />
+          <p>{pokemon.pokemonname}</p>
+          <img className='pokemon-image' src={pokemon.url_image} />
         </div>
       </Link>
     </div>
