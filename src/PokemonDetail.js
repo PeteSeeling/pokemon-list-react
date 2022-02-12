@@ -17,7 +17,6 @@ export default function PokemonDetail() {
   }, [id]);
 
   return (
-
     <><>
       <button><NavLink to='/'>Home Page</NavLink></button></><div className='pokemon-detail'>
       <div className='pokemon-data'>
