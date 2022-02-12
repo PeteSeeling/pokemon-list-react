@@ -14,9 +14,8 @@ function App() {
       const end = page * perPage;
      
       const data = await getPokemons(start, end);
-      console.log(data);
+    
       setpokemons(data);
-
     }
     fetch();
   }, [page]);
