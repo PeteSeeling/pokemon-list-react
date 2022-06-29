@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { getPokemons } from './services/fetch-utils';
 import PokemonList from './PokemonList';
 
-
 function App() {
   const [pokemons, setpokemons] = useState([]);
   const [page, setPage] = useState(1);
@@ -12,9 +11,8 @@ function App() {
     async function fetch() {
       const start = page * perPage - perPage;
       const end = page * perPage;
-     
+
       const data = await getPokemons(start, end);
-    
       setpokemons(data);
     }
     fetch();
@@ -27,13 +25,10 @@ function App() {
       <div className='buttons'>
         <button onClick={() => setPage(page - 1)} disabled={page === 1} >Previous Page</button>
         <button onClick={() => setPage(page + 1)}>Next Page</button>
-      
       </div>
       <PokemonList pokemons={pokemons} />
     </div>
     </></>
   );
-
-
 }
 export default App;

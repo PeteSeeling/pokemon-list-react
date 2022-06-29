@@ -7,7 +7,6 @@ export async function getPokemons(from = 0, to = 20) {
     .range(from, to);
 
   return checkError(response);
-
 }
 
 export async function getSinglePokemon(id){

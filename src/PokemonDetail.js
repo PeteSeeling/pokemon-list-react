@@ -33,4 +33,5 @@ export default function PokemonDetail() {
         <p>{pokemon.egg_gounp_1} Egg Group</p>
       </div>
     </div></>
-  );}
+  );
+}
